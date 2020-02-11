@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'markers', component: ListMarkersComponent },
-  { path: 'edit', component: MarkersComponent },
+  { path: 'op', component: MarkersComponent },
   { path: 'forms', component: FormsComponent },
   { path: 'buttons', component: ButtonsComponent },
   { path: 'tables', component: TablesComponent },

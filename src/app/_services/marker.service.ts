@@ -5,9 +5,9 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class MarkerService {
+export class PlaceService {
 
-  private baseUrl :string = "http://localhost:3000/users";
+  private baseUrl :string = "MOUAD";
   private place:Place;
   constructor(private http: HttpClient) { }
 

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Place } from '../_model/place';
+import { PlaceService } from '../_services/marker.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-markers',
@@ -7,9 +10,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MarkersComponent implements OnInit {
 
-  constructor() { }
+  private place: Place;
+  // onAddOrUpdate: boolean = true;
+
+  constructor(private placeService: PlaceService, private router: Router) { }
 
   ngOnInit() {
+    this.place = this.placeService.getter();
+    // if(this.user.id == undefined)
+    // {
+    //   this.onAddOrUpdate = true; 
+    // }else{
+    //   this.onAddOrUpdate = false;
+    // }
   }
-
+  processForm(a){
+    if(this.place.id == undefined){
+      // this.onAddOrUpdate = true;
+      this.placeService.createPlace(this.place).subscribe(res=>{
+        console.log(res);
+        this.router.navigate(['/']);
+      });
+    }
+    else
+    {
+      // this.onAddOrUpdate = false;
+      this.placeService.updatePlace(this.place).subscribe(res=>{
+        this.router.navigate(['/']);
+        console.log(res);
+      });
+    }
+  }
 }
