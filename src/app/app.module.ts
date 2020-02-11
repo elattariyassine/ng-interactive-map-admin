@@ -28,6 +28,7 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { TabsComponent } from './tabs/tabs.component';
 import { MarkersComponent } from './markers/markers.component';
 import { ListMarkersComponent } from './list-markers/list-markers.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { ListMarkersComponent } from './list-markers/list-markers.component';
     RouterModule,
     AppRoutingModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
