@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Place } from '../_model/place';
 import { PlaceService } from '../_services/marker.service';
 import { Router } from '@angular/router';
+import { on } from 'cluster';
 
 @Component({
   selector: 'app-list-markers',
@@ -11,6 +12,8 @@ import { Router } from '@angular/router';
 export class ListMarkersComponent implements OnInit {
 
   places: Place[] = [];
+  onDelete: boolean = false;
+  DeletedElement: string = "xxx";
   constructor(private placeService: PlaceService, private router: Router) { }
 
   ngOnInit() {
@@ -28,6 +31,11 @@ export class ListMarkersComponent implements OnInit {
     this.placeService.deletePlace(place.id).subscribe(res=>{
       console.log(res);
       this.places.splice(this.places.indexOf(place), 1);
+      this.DeletedElement = res.name;
+      this.onDelete = true;
+      setTimeout(() => {
+        this.onDelete = false;
+      },3000);
     });
   }
 

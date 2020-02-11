@@ -2,7 +2,6 @@
     <div class="card">
         <div class="card-body">
             <h4 class="card-title text-center">Gestion des marqueurs</h4>
-
             <form class="forms-sample">
                 <div class="form-group">
                     <label for="exampleInputName1">Nom d'endroit</label>
@@ -26,8 +25,8 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="">Latitude &nbsp;&nbsp; <i class="fa fa-th-large"></i>&nbsp;&nbsp; Longitude</span>
                         </div>
-                        <input type="text" name="lat" [(ngModel)]="coordinate[0]" class="form-control" placeholder="Latitude">
-                        <input type="text" name="lon" [(ngModel)]="coordinate[1]" class="form-control" placeholder="Longitude">
+                        <input type="text" name="lat" [(ngModel)]="place.coordinates[0]" class="form-control" placeholder="Latitude">
+                        <input type="text" name="lon" [(ngModel)]="place.coordinates[1]" class="form-control" placeholder="Longitude">
                     </div>
                 </div>
                 <div class="text-center">

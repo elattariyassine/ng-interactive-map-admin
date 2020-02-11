@@ -11,8 +11,9 @@ import { Router } from '@angular/router';
 export class MarkersComponent implements OnInit {
 
   private place: Place;
+  onDelete: boolean = true;
 
-  coordinate: number[] = [0,0];
+  // coordinate: number[] = [this.place.coordinates[0],this.place.coordinates[1]];
     
   // onAddOrUpdate: boolean = true;
 
@@ -20,6 +21,11 @@ export class MarkersComponent implements OnInit {
 
   ngOnInit() {
     this.place = this.placeService.getter();
+
+    if (this.place.id == undefined ){
+      this.place.coordinates = [];
+      // this.place.coordinates[1] = 0;
+    }
     // if(this.user.id == undefined)
     // {
     //   this.onAddOrUpdate = true; 
@@ -28,7 +34,7 @@ export class MarkersComponent implements OnInit {
     // }
   }
   processForm(a){
-    this.place.coordinates = this.coordinate;
+    // this.place.coordinates = this.coordinate;
     if(this.place.id == undefined){
       // this.onAddOrUpdate = true;
       this.placeService.createPlace(this.place).subscribe(res=>{

@@ -1,15 +1,3 @@
 {
-  "places": [
-    {
-      "id": 1,
-      "name": "json-server",
-      "image": "typicode",
-      "type": "B",
-      "description": "hi",
-      "coordinates": [
-        1,
-        2
-      ]
-    }
-  ]
+  "places": []
 }

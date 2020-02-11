@@ -1,6 +1,9 @@
 <div class="col-lg-8 grid-margin stretch-card offset-2">
     <div class="card">
         <div class="card-body">
+            <div class="alert alert-danger fade show" *ngIf="onDelete" role="alert">
+                L'élément <strong>{{ DeletedElement | uppercase }}</strong> a été supprimé avec succès
+            </div>
             <h4 class="card-title" style="float: left;">Gestion des marqueurs</h4>
             <div style="text-align: right;">
                 <button class="btn btn-success btn-fw" type="button" (click)="newPlace()">Ajouter</button>
