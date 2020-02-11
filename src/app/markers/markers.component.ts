@@ -12,6 +12,7 @@ export class MarkersComponent implements OnInit {
 
   private place: Place;
   onDelete: boolean = true;
+  types : string[] = ["all","que voire","transport","ouManger","shopping","ouDormir","visiteTouristique"];
 
   // coordinate: number[] = [this.place.coordinates[0],this.place.coordinates[1]];
     

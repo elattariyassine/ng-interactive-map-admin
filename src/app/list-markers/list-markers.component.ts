@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Place } from '../_model/place';
 import { PlaceService } from '../_services/marker.service';
 import { Router } from '@angular/router';
-import { on } from 'cluster';
 
 @Component({
   selector: 'app-list-markers',

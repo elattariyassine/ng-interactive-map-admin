@@ -1,3 +1,26 @@
 {
-  "places": []
+  "places": [
+    {
+      "coordinates": [
+        "a",
+        "a"
+      ],
+      "name": "a",
+      "image": "a",
+      "type": "visiteTouristique",
+      "description": "a",
+      "id": 1
+    },
+    {
+      "coordinates": [
+        "z",
+        "z"
+      ],
+      "type": "que voire",
+      "name": "a",
+      "image": "a",
+      "description": "a",
+      "id": 2
+    }
+  ]
 }
