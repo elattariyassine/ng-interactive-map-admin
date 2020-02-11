@@ -7,8 +7,15 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PlaceService {
 
-  private baseUrl :string = "MOUAD";
+  private baseUrl :string = "http://localhost:3000/places";
   private place:Place;
+  //   id:0,
+  //   name: '',
+  //   type: '',
+  //   description: '',
+  //   image: '',
+  //   coordinates:[0,0]
+  // };
   constructor(private http: HttpClient) { }
 
   findAll(){

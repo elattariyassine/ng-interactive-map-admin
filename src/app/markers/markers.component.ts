@@ -11,6 +11,9 @@ import { Router } from '@angular/router';
 export class MarkersComponent implements OnInit {
 
   private place: Place;
+
+  coordinate: number[] = [0,0];
+    
   // onAddOrUpdate: boolean = true;
 
   constructor(private placeService: PlaceService, private router: Router) { }
@@ -25,20 +28,26 @@ export class MarkersComponent implements OnInit {
     // }
   }
   processForm(a){
+    this.place.coordinates = this.coordinate;
     if(this.place.id == undefined){
       // this.onAddOrUpdate = true;
       this.placeService.createPlace(this.place).subscribe(res=>{
         console.log(res);
-        this.router.navigate(['/']);
+        this.router.navigate(['/markers']);
       });
     }
     else
     {
       // this.onAddOrUpdate = false;
       this.placeService.updatePlace(this.place).subscribe(res=>{
-        this.router.navigate(['/']);
+        this.router.navigate(['/markers']);
         console.log(res);
       });
     }
+  }
+
+  backToList()
+  {
+    this.router.navigateByUrl('markers');
   }
 }

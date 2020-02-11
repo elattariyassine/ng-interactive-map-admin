@@ -6,19 +6,19 @@
             <form class="forms-sample">
                 <div class="form-group">
                     <label for="exampleInputName1">Nom d'endroit</label>
-                    <input type="text" class="form-control" id="exampleInputName1" placeholder="Name">
+                    <input [(ngModel)]="place.name" name="nom" type="text" class="form-control" id="exampleInputName1" placeholder="Name">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail3">Image</label>
-                    <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
+                    <input [(ngModel)]="place.image" name="image" type="text" class="form-control" id="exampleInputEmail3" placeholder="Email">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword4">Type</label>
-                    <input type="password" class="form-control" id="exampleInputPassword4" placeholder="Password">
+                    <input [(ngModel)]="place.type" name="type" type="text" class="form-control" id="exampleInputPassword4" placeholder="Password">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputCity1">Description</label>
-                    <input type="text" class="form-control" id="exampleInputCity1" placeholder="Location">
+                    <input [(ngModel)]="place.description" name="desc" type="text" class="form-control" id="exampleInputCity1" placeholder="Location">
                 </div>
                 <div class="form-group">
                     <label for="exampleTextarea1">Coordonnées géographiques</label>
@@ -26,13 +26,13 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="">Latitude &nbsp;&nbsp; <i class="fa fa-th-large"></i>&nbsp;&nbsp; Longitude</span>
                         </div>
-                        <input type="text" class="form-control" placeholder="Latitude">
-                        <input type="text" class="form-control" placeholder="Longitude">
+                        <input type="text" name="lat" [(ngModel)]="coordinate[0]" class="form-control" placeholder="Latitude">
+                        <input type="text" name="lon" [(ngModel)]="coordinate[1]" class="form-control" placeholder="Longitude">
                     </div>
                 </div>
                 <div class="text-center">
-                    <button class="btn btn-primary" type="button"><i class="fa fa-plus"></i>Ajouter place</button>&nbsp;
-                    <button class="btn btn-light">Annuler</button>
+                    <button class="btn btn-primary" (click)="processForm()" type="button"><i class="fa fa-plus"></i>Ajouter place</button>&nbsp;
+                    <button class="btn btn-light" (click)="backToList()">Annuler</button>
                 </div>
             </form>
         </div>

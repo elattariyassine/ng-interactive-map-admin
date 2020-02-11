@@ -24,7 +24,7 @@ export class ListMarkersComponent implements OnInit {
     });
   }
 
-  deleteMarker(place: Place){
+  deletePlace(place: Place){
     this.placeService.deletePlace(place.id).subscribe(res=>{
       console.log(res);
       this.places.splice(this.places.indexOf(place), 1);
@@ -35,7 +35,7 @@ export class ListMarkersComponent implements OnInit {
     this.placeService.setter(place);
     this.router.navigate(['op']);
   }
-  newUser(){
+  newPlace(){
     let user = new Place();
     this.placeService.setter(user);
     this.router.navigate(['op']);
