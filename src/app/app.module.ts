@@ -27,6 +27,7 @@ import { TooltipsComponent } from './tooltips/tooltips.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { TabsComponent } from './tabs/tabs.component';
 import { MarkersComponent } from './markers/markers.component';
+import { ListMarkersComponent } from './list-markers/list-markers.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { MarkersComponent } from './markers/markers.component';
     TooltipsComponent,
     CarouselComponent,
     TabsComponent,
-    MarkersComponent
+    MarkersComponent,
+    ListMarkersComponent
   ],
   imports: [
     BrowserModule,

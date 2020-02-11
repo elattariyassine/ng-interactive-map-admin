@@ -17,12 +17,14 @@ import { DropdownComponent } from './dropdown/dropdown.component';
 import { TooltipsComponent } from './tooltips/tooltips.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { TabsComponent } from './tabs/tabs.component';
+import { ListMarkersComponent } from './list-markers/list-markers.component';
 import { MarkersComponent } from './markers/markers.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'markers', component: MarkersComponent },
+  { path: 'markers', component: ListMarkersComponent },
+  { path: 'edit', component: MarkersComponent },
   { path: 'forms', component: FormsComponent },
   { path: 'buttons', component: ButtonsComponent },
   { path: 'tables', component: TablesComponent },
