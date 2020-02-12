@@ -29,6 +29,7 @@ import { TabsComponent } from './tabs/tabs.component';
 import { MarkersComponent } from './markers/markers.component';
 import { ListMarkersComponent } from './list-markers/list-markers.component';
 import { HttpClientModule } from '@angular/common/http';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     FormsModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
