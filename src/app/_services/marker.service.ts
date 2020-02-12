@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
 export class PlaceService {
 
   private baseUrl :string = "http://localhost:3000/markers";
+  private weather :string = "http://api.openweathermap.org/data/2.5/weather?q=beni%20mellal&appid=b3fa6d2303d0eb6b1a20dd3626a5177b";
   private place:Place;
   //   id:0,
   //   name: '',
@@ -35,5 +36,8 @@ export class PlaceService {
   }
   getter(){
     return this.place;
+  }
+  getWeather(){
+    return this.http.get<any[]>(this.weather);
   }
 }
