@@ -1,4 +1,4 @@
-<div class="col-lg-8 grid-margin stretch-card offset-2">
+<div class="col-lg-10 grid-margin stretch-card offset-1">
     <div class="card">
         <div class="card-body">
             <div class="alert alert-danger fade show" *ngIf="onDelete" role="alert">
@@ -22,8 +22,8 @@
                             <td> {{ place.name }}</td>
                             <td> {{ place.type }}</td>
                             <td>
-                                <button class="btn btn-primary" (click)="updatePlace(place)" type="button"><i class="fa fa-plus"></i>Modifier</button>&nbsp;
-                                <button class="btn btn-danger" (click)="deletePlace(place)" type="button"><i class="mdi mdi-upload"></i>Supprimer</button>
+                                <button class="btn btn-primary" (click)="updatePlace(place)" type="button"><i class="fa fa-edit"></i>Modifier</button>&nbsp;
+                                <button class="btn btn-danger" (click)="deletePlace(place)" type="button"><i class="fa fa-trash"></i>Supprimer</button>
                             </td>
                         </tr>
                     </tbody>

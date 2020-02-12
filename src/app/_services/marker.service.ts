@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PlaceService {
 
-  private baseUrl :string = "http://localhost:3000/places";
+  private baseUrl :string = "http://localhost:3000/markers";
   private place:Place;
   //   id:0,
   //   name: '',

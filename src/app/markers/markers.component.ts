@@ -12,7 +12,8 @@ export class MarkersComponent implements OnInit {
 
   private place: Place;
   onDelete: boolean = true;
-  types : string[] = ["all","que voire","transport","ouManger","shopping","ouDormir","visiteTouristique"];
+  onAddOrUpdate: boolean = false;
+  types : string[] = ["que voire","transport","Ou manger","shopping","Ou dormir","visite touristique"];
 
   // coordinate: number[] = [this.place.coordinates[0],this.place.coordinates[1]];
     
@@ -27,17 +28,14 @@ export class MarkersComponent implements OnInit {
       this.place.coordinates = [];
       // this.place.coordinates[1] = 0;
     }
-    // if(this.user.id == undefined)
-    // {
-    //   this.onAddOrUpdate = true; 
-    // }else{
-    //   this.onAddOrUpdate = false;
-    // }
+    else
+    {
+      this.onAddOrUpdate = !this.onAddOrUpdate;
+    }
   }
-  processForm(a){
-    // this.place.coordinates = this.coordinate;
+  processForm(){
+    console.log(this.place);
     if(this.place.id == undefined){
-      // this.onAddOrUpdate = true;
       this.placeService.createPlace(this.place).subscribe(res=>{
         console.log(res);
         this.router.navigate(['/markers']);
@@ -45,7 +43,6 @@ export class MarkersComponent implements OnInit {
     }
     else
     {
-      // this.onAddOrUpdate = false;
       this.placeService.updatePlace(this.place).subscribe(res=>{
         this.router.navigate(['/markers']);
         console.log(res);

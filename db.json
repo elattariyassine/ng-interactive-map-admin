@@ -2,24 +2,24 @@
   "places": [
     {
       "coordinates": [
-        "a",
-        "a"
+        "1",
+        "1"
       ],
       "name": "a",
       "image": "a",
-      "type": "visiteTouristique",
-      "description": "a",
+      "type": "transport",
+      "description": "azaz",
       "id": 1
     },
     {
       "coordinates": [
-        "z",
-        "z"
+        "1",
+        "1"
       ],
-      "type": "que voire",
-      "name": "a",
-      "image": "a",
-      "description": "a",
+      "name": "r",
+      "image": "r",
+      "type": "Ou manger",
+      "description": "une description",
       "id": 2
     }
   ]
