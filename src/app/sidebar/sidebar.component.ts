@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-sidebar',
@@ -6,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent implements OnInit {
-  constructor() { }
+  constructor(private route: Router) { }
 
   ngOnInit() {
+  }
+  toMarkerAdd(){
+    this.route.navigateByUrl('/op');
   }
 
 }

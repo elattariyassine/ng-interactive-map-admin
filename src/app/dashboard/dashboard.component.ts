@@ -18,8 +18,10 @@ export class DashboardComponent implements OnInit {
   countPlacesForEating: Place[] = [];
   CurrentCityTemp: number = 0;
   skyState : string = '';
+  todayDate: number;
 
   ngOnInit() {
+    this.todayDate = Date.now();
     this.markerService.findAll().subscribe((places: Place[]) => {
       this.countPlaces = places;
       console.log(this.countPlaces);
