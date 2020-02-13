@@ -10,13 +10,7 @@ export class PlaceService {
   private baseUrl :string = "http://localhost:3000/markers";
   private weather :string = "http://api.openweathermap.org/data/2.5/weather?q=beni%20mellal&appid=b3fa6d2303d0eb6b1a20dd3626a5177b";
   private place:Place;
-  //   id:0,
-  //   name: '',
-  //   type: '',
-  //   description: '',
-  //   image: '',
-  //   coordinates:[0,0]
-  // };
+
   constructor(private http: HttpClient) { }
 
   findAll(){
@@ -38,6 +32,6 @@ export class PlaceService {
     return this.place;
   }
   getWeather(){
-    return this.http.get<any[]>(this.weather);
+    return this.http.get(this.weather);
   }
 }

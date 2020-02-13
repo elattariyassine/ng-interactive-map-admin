@@ -18,14 +18,23 @@ export class DashboardComponent implements OnInit {
   countPlacesForEating: Place[] = [];
   CurrentCityTemp: number = 0;
   skyState : string = '';
-  todayDate: number;
+  todayDate: number = 0;
+  todayDateName: string = '';
 
   ngOnInit() {
     this.todayDate = Date.now();
+    this.getStatictics();
+    this.getCurrentDate();
+    this.markerService.getWeather().subscribe((res) => {
+      this.CurrentCityTemp = res['main']['temp'] - 273.15;
+      this.skyState = res['weather'][0]["description"];
+    });
+  }
+
+
+  getStatictics(){
     this.markerService.findAll().subscribe((places: Place[]) => {
       this.countPlaces = places;
-      console.log(this.countPlaces);
-      console.log(this.countPlaces.length);
       this.countPlacesShopping = this.countPlaces.filter((item) =>{
         return item.type == "shopping"
       });
@@ -33,14 +42,18 @@ export class DashboardComponent implements OnInit {
         return item.type == "Ou manger"
       });
     });
-
-    this.markerService.getWeather().subscribe((res: any[]) => {
-      console.log(res.main.temp);
-      console.log(res.weather.description);
-      this.CurrentCityTemp = res.main.temp - 273.15;
-      this.skyState = res.weather[0].description;
-    });
-
+  }
+  getCurrentDate(){
+    let nowDate = new Date();
+    let weekdays = new Array(7);
+    weekdays[0] = "Dimanche";
+    weekdays[1] = "Lundi";
+    weekdays[2] = "Mardi";
+    weekdays[3] = "Mercredi";
+    weekdays[4] = "Jeudi";
+    weekdays[5] = "Vendredi";
+    weekdays[6] = "samedi";
+    this.todayDateName = weekdays[nowDate.getDay()];
   }
 
 }
