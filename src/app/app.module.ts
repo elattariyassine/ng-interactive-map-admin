@@ -15,6 +15,7 @@ import { ListMarkersComponent } from './list-markers/list-markers.component';
 import { HttpClientModule } from '@angular/common/http';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { ShortenPipe } from './shorten.pipe';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     DashboardComponent,
     MarkersComponent,
     ListMarkersComponent,
-    SidebarComponent
+    SidebarComponent,
+    ShortenPipe
   ],
   imports: [
     BrowserModule,
